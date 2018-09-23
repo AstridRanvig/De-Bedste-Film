@@ -19,6 +19,10 @@
     <!-- Sikrer man kan benytte CSS ved at tilkoble en CSS fil -->
     <link href="Styles/styles.css" rel="stylesheet" type="text/css">
 
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+
+
     <!-- Sikrer den vises korrekt på mobil, tablet mv. ved at tage ift. skærmstørrelse -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -42,7 +46,7 @@
 <!-- i <body> har man alt indhold på siden -->
 <body>
 
-<div class="background">
+
 
     <div class ="mobil_menu">
 
@@ -51,7 +55,7 @@
             <div class="logo"> <a href="Debedstefilm.html"><img class="logo" alt="De Bedste Film logo" src="images/DBF_logo_white.svg"></a></div>
         </div>
 
-        <div class="menu_punkt"> <a href="Debedstefilm.html"><p>MENU PUNKT</p></a>
+        <div class="menu_punkt"> <a href="Indholdsside.html"><p>Info om film</p></a>
         </div>
 
         <div class="menu_punkt"> <a href="Debedstefilm.html"><p>MENU PUNKT</p></a>
@@ -60,13 +64,25 @@
         <div class="menu_punkt"><a href="Debedstefilm.html"><p>MENU PUNKT</p></a>
         </div>
 
-        <div class="menu_punkt"><a href="Debedstefilm.html"><p>MENU PUNKT</p></a>
-        </div>
+
+    </div>
+
+<div class="background">
+
+    <div class = "intro">
+
+            <div class="boks1"></div>
+            <div class="boks2"></div>
+            <div class="boks3"></div>
+            <div class="boks4"></div>
+            <div class="boks5"></div>
+            <div class="boks6"></div>
 
     </div>
 
 
     <div class="flex-box">
+
 
     </div>
 
@@ -105,9 +121,10 @@
 
             $.each(result.items, function (k , v) {
                 $(".flex-box").append("<div class='poster'>" +
-                    "<img src='https://image.tmdb.org/t/p/w185" + v.poster_path + "'>" +
-                    "<div class='title'> + v.title + </div>" + "</div>");
+                    "<img src='https://image.tmdb.org/t/p/w185" + v.poster_path + "'>"
+                + "<br>" + "<b>" + v.title + "</b>" + "<br>" + "<i class=\"fas fa-star\"></i>" + " " + v.vote_average + " /  af " + v.vote_count + " stemmer" + "</div>");
             });
+
 
         },
 

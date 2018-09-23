@@ -9,7 +9,7 @@
     <meta charset="utf-8">
 
     <!-- Titel som ses oppe i browserens tab mv. -->
-    <title>Underside</title>
+    <title>Infoside</title>
 
     <!-- Metatags der fortæller at søgemaskiner er velkomne, hvem der udgiver siden og copyright information -->
     <meta name="robots" content="All">
@@ -17,7 +17,9 @@
     <meta name="copyright" content="Information om copyright">
 
     <!-- Sikrer man kan benytte CSS ved at tilkoble en CSS fil -->
-    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="Styles/styles.css" rel="stylesheet" type="text/css">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
     <!-- Sikrer den vises korrekt på mobil, tablet mv. ved at tage ift. skærmstørrelse -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,6 +42,41 @@
 
 <!-- i <body> har man alt indhold på siden -->
 <body>
+
+<div class ="mobil_menu">
+
+
+    <div class="menu_punkt">
+        <div class="logo"> <a href="Debedstefilm.html"><img class="logo" alt="De Bedste Film logo" src="images/DBF_logo_white.svg"></a></div>
+    </div>
+
+    <div class="menu_punkt"> <a href="Debedstefilm.html"><p>MENU PUNKT</p></a>
+    </div>
+
+    <div class="menu_punkt"> <a href="Debedstefilm.html"><p>MENU PUNKT</p></a>
+    </div>
+
+    <div class="menu_punkt"><a href="Debedstefilm.html"><p>MENU PUNKT</p></a>
+    </div>
+
+
+
+</div>
+
+<div class="flex-box">
+    <div class="profile_picture"> </div>
+    <div class="description"> </div>
+    <div class="info_box"> </div>
+</div>
+
+
+
+
+<div class="footer">
+
+</div>
+
+
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -64,12 +101,15 @@
             console.log(result);
 
 
-            $(".movie").html("<img src='https://image.tmdb.org/t/p/w780" + result.items[0].poster_path + "'>");
+            $(".profile_picture").html("<img src='https://image.tmdb.org/t/p/w342" + result.items[0].poster_path + "'>");
 
-            $.each(result.items, function (k , value) {
-                $(".movies").append(value.title + "-" + value.release_date + "<br>");
 
-            });
+            $(".description").html("<h1>" + result.items[0].title + "</h1>" + "<br>" + result.items[0].overview);
+
+
+            $(".info_box").html(result.items[0].title + "<br> <br> <i class=\"fas fa-star\"></i> " + result.items[0].vote_average +
+                 " / " + "af" + " " + result.items[0].vote_count + " stemmer" + "<br><br>" + "Premiere: " + result.items[0].release_date +
+            "<br><br>" + "Original sprog: " + result.items[0].original_language );
 
         },
 
