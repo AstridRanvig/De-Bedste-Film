@@ -1,0 +1,90 @@
+.mobil_menu{
+    position: fixed;
+    background-color: black;
+    font-family: "Lato", sans-serif;
+    height:100px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    .mobil_menu a{
+        color: white;
+    }
+    }
+
+.menu_punkt {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.logo {
+    position: absolute;
+    z-index: 100;
+    left: 3%;
+    height: 80%;
+    margin: auto;
+}
+
+.background{
+    background-image: url("images/Abstract-Envelope.svg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;}
+
+.flex-box{
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.poster{
+    margin: 25px;
+}
+
+.poster_image{
+    width: 50px;
+}
+
+.title{
+    background-color: rgba(61, 60, 61, 0.9);
+    font-family: "Lato", sans-serif;
+    color: red;
+    font-size: 30px;
+    padding-left:10px;
+    padding-right: 10px;
+}
+
+.footer{
+    background-color: rgba(61, 60, 61, 0.9);
+    font-family: "Lato", sans-serif;
+    height: 20%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

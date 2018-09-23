@@ -1,0 +1,126 @@
+<!-- Fortæller det er html5 -->
+<!-- html starter og slutter hele dokumentet / lang=da: Fortæller siden er på dansk -->
+<html lang="da">
+
+<!-- I <head> har man opsætning - alt det som man ikke ser som selve indholdet -->
+<head>
+
+    <!-- Sætter tegnsætning til utf-8 som bl.a. tillader danske bogstaver -->
+    <meta charset="utf-8">
+
+    <!-- Titel som ses oppe i browserens tab mv. -->
+    <title>DE BEDSTE FILM</title>
+
+    <!-- Metatags der fortæller at søgemaskiner er velkomne, hvem der udgiver siden og copyright information -->
+    <meta name="robots" content="All">
+    <meta name="author" content="Udgiver">
+    <meta name="copyright" content="Information om copyright">
+
+    <!-- Sikrer man kan benytte CSS ved at tilkoble en CSS fil -->
+    <link href="styles.css" rel="stylesheet" type="text/css">
+
+    <!-- Sikrer den vises korrekt på mobil, tablet mv. ved at tage ift. skærmstørrelse -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <meta property="og:title" content="titel"/>
+     
+    <meta property="og:type" content="website"/>
+     
+    <meta property="og:url" content="http://www.domain.dk"/>
+     
+    <meta property="og:image" content="https://www.domain.dk/img.jpg"/>
+     
+    <meta property="og:description" content="Beskrivelse"/>
+     
+    <meta property="og:locale" content="da_DK"/>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+</head>
+
+<!-- i <body> har man alt indhold på siden -->
+<body>
+
+<div class="background">
+
+    <div class ="mobil_menu">
+
+
+        <div id="logo"><a href="Debedstefilm.html"><img class="logo" alt="De Bedste Film logo" src="images/DBF_logo_white.svg"></a></div>
+        <div class="menu_punkt"></div>
+
+        <div class="menu_punkt"> <a href="Debedstefilm.html"><p>MENU PUNKT</p></a>
+        </div>
+
+        <div class="menu_punkt"> <a href="Debedstefilm.html"><p>MENU PUNKT</p></a>
+        </div>
+
+        <div class="menu_punkt"><a href="Debedstefilm.html"><p>MENU PUNKT</p></a>
+        </div>
+
+        <div class="menu_punkt"><a href="Debedstefilm.html"><p>MENU PUNKT</p></a>
+        </div>
+
+    </div>
+
+
+    <div class="flex-box">
+
+    </div>
+
+</div>
+
+<div class="footer">
+
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+    // Pagecreate will fire for each of the pages in this demo
+    // but we only need to bind once so we use "one()"
+    $(document).ready(function (e) {
+        // Din kode her
+
+    });
+
+
+    $.ajax({
+        type: "GET",
+        dataType: "json",
+        url: "https://api.themoviedb.org/3/list/2469",
+
+        data: {
+            'api_key': '4b508e695b5537e0b7f2615a6cb96df8',
+            'language': 'da_DA'
+        },
+
+        success: function(result) {
+
+            console.log(result);
+
+            $.each(result.items, function (k , value) {
+                $(".flex-box").append("<div class='poster'>" +
+                    "<img src='https://image.tmdb.org/t/p/w185" + value.poster_path + "'>" +
+                    "<div class='title'> + value.title + </div>" + "</div>");
+            });
+
+        },
+
+
+        error: function (error) {
+            console.log(error);
+            alert("FEJL");
+        }
+
+    });
+
+
+</script>
+
+</body>
+</html>
+
