@@ -17,7 +17,7 @@
     <meta name="copyright" content="Information om copyright">
 
     <!-- Sikrer man kan benytte CSS ved at tilkoble en CSS fil -->
-    <link href="styles.css" rel="stylesheet" type="text/css">
+    <link href="Styles/styles.css" rel="stylesheet" type="text/css">
 
     <!-- Sikrer den vises korrekt på mobil, tablet mv. ved at tage ift. skærmstørrelse -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -47,8 +47,9 @@
     <div class ="mobil_menu">
 
 
-        <div id="logo"><a href="Debedstefilm.html"><img class="logo" alt="De Bedste Film logo" src="images/DBF_logo_white.svg"></a></div>
-        <div class="menu_punkt"></div>
+        <div class="menu_punkt">
+            <div class="logo"> <a href="Debedstefilm.html"><img class="logo" alt="De Bedste Film logo" src="images/DBF_logo_white.svg"></a></div>
+        </div>
 
         <div class="menu_punkt"> <a href="Debedstefilm.html"><p>MENU PUNKT</p></a>
         </div>
@@ -102,10 +103,10 @@
 
             console.log(result);
 
-            $.each(result.items, function (k , value) {
+            $.each(result.items, function (k , v) {
                 $(".flex-box").append("<div class='poster'>" +
-                    "<img src='https://image.tmdb.org/t/p/w185" + value.poster_path + "'>" +
-                    "<div class='title'> + value.title + </div>" + "</div>");
+                    "<img src='https://image.tmdb.org/t/p/w185" + v.poster_path + "'>" +
+                    "<div class='title'> + v.title + </div>" + "</div>");
             });
 
         },
